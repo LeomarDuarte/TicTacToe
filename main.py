@@ -10,7 +10,7 @@ table   = ['1','2','3', '4','5','6','7','8','9']
 def winner():
     global table
     for i in ['X','O']:
-        # Horizonta
+        # Horizontal
         if table[0] == table[1] == table[2] == i: return i
         if table[3] == table[4] == table[5] == i: return i
         if table[6] == table[7] == table[8] == i: return i
@@ -47,18 +47,22 @@ def move(pos):
 while True:
     os.system(clean)
     view()
-    print ("Player %s must mark a position" % turn)
+
+    print("Player %s must mark a position" % turn)
     movement = int(input())
+
     print ("Player %s: " % turn, movement)
     move(movement)
 
     win = winner()
     if not win: continue
     if win == p_char:
-        print ("Player 1 Wins!")
+        print("Player 1 Wins!")
+        print("Thank you for playing Tic Toc Game! Press ENTER to end of the game....")
         input()
         exit()
     if win == c_char:
-        print ("Player 2 Wins!")
+        print("Player 2 Wins!")
+        print("Thank you for playing Tic Toc Game! Press ENTER to end of the game....")
         input()
         exit()
