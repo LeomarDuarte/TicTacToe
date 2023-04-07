@@ -43,3 +43,22 @@ def move(pos):
 
     table[pos-1] = ('O','X')[turn == 1]
     turn = (1, 2)[turn == 1]
+
+while True:
+    os.system(clean)
+    view()
+    print ("Player %s must mark a position" % turn)
+    movement = int(input())
+    print ("Player %s: " % turn, movement)
+    move(movement)
+
+    win = winner()
+    if not win: continue
+    if win == p_char:
+        print ("Player 1 Wins!")
+        input()
+        exit()
+    if win == c_char:
+        print ("Player 2 Wins!")
+        input()
+        exit()
