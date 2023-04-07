@@ -32,3 +32,14 @@ def view():
     print ("---+---+---")
     print (" %s | %s | %s " % (table[6], table[7], table[8]))
     print ("---+---+---")
+
+def move(pos):
+    global turn
+    global table
+    
+    if not pos: return None
+    if not 0 < pos < 10: return False
+    if table[pos-1] in ['X','O']: return False
+
+    table[pos-1] = ('O','X')[turn == 1]
+    turn = (1, 2)[turn == 1]
